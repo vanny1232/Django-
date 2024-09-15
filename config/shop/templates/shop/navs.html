@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/navs.css' %}" />
+  </head>
+  <body>
+    <a href="{% url 'home' %}" id="link">ទំព៏រដើម</a>
+    <!-- <a href="" id="link">សម្លៀកបំពាក់</a>
+    <a href="" id="link">ស្បែកជើង</a>
+    <a href="" id="link">កាបូប</a>
+    <a href="" id="link">វែនតា</a> -->
+    {% for x in catagories %}
+    <a href="{% url 'catagories' id=x.id %}">{{ x.name }}</a>
+    {% endfor %}
+    <a href="{% url 'update' %}">Update</a>
+  </body>
+</html>

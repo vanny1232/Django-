@@ -1,0 +1,14 @@
+{% extends "shop/index.html" %} {% block body %}
+<div class="product">
+  <h2>{{ product.name }}</h2>
+  <img
+    src="{{ product.img.url }}"
+    alt="{{ product.name }}"
+    width="300px"
+    height="300px"
+  />
+  <p>Price: $ {{ product.price}}</p>
+  <p>Description: {{ product.disciptions}}</p>
+  <!-- Assuming you have a description field -->
+</div>
+{% endblock %}

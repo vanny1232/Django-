@@ -1,0 +1,13 @@
+{% extends "shop/index.html" %} {% load static %} {% block body %}
+<!-- Debugging content -->
+{% for x in catagories %} {% endfor %} {% for x in Poduct %}
+<!-- Change 'Poduct' to 'products' or the correct variable name -->
+<a href="{% url 'product_detail' id=x.id %}">
+  <img src="{{ x.img.url }}" alt="{{ x.name }}" width="270" height="250" />
+  <!-- Correctly reference the image URL -->
+  <div class="product_name">{{ x.name }}</div>
+  <div class="product_price">${{ x.price }}</div>
+</a>
+{% endfor %}
+<!-- End debugging content -->
+{% endblock %}

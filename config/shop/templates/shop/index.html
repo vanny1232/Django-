@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shop.com</title>
+    <link rel="icon" type="image/x-icon" href="{%static 'img/store.png'%}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="contaner">
+      <!-- header -->
+      <div class="header">
+        <div class="logo">
+          <a href="{% url 'home' %}"
+            ><img src="{%static 'img/store.png'%}" alt="logo"
+          /></a>
+        </div>
+        <form class="search-bar" method="get">
+          <input
+            type="text"
+            placeholder="Search..."
+            name="Search"
+            value="{{filters}}"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <div class="btn">
+          <a href="#">
+            <img src="{%static 'img/shopping-cart.png'%}" alt="logo"
+          /></a>
+          <a href="#"> <img src="{%static 'img/heart.png'%}" alt="logo" /></a>
+          <a href="#">Singin</a>
+        </div>
+      </div>
+      <div class="nav">{% include 'shop/navs.html' %}</div>
+      <!-- body -->
+
+      <div class="body">{% block body %} {% endblock %}</div>
+      <!-- fooder -->
+      <div class="footer">
+        <p>&copy; 2020 shop.com. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
